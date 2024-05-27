@@ -1,0 +1,325 @@
+<!-- ============================================ -->
+<!--                   Services                   -->
+<!-- ============================================ -->        
+
+<section id="services-1191">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Popular Menu Items</h2>
+            <p class="cs-text">
+                (The menu features only the most popular items to ensure an amazing dining experience focused on the beloved favorites of our guests)
+            </p>
+        </div>
+        <!--Placed in a wrapper div so we can position the car absolutely inside the container to be centered in the middle of the list on desktop-->
+        <div class="cs-wrapper">
+            <!--Car-->
+            <picture class="cs-image">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="https://cdn.pixabay.com/photo/2020/05/16/19/26/coffee-5178853_1280.png">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="https://cdn.pixabay.com/photo/2020/05/16/19/26/coffee-5178853_1280.png">
+                <img loading="lazy" decoding="async" src="https://cdn.pixabay.com/photo/2020/05/16/19/26/coffee-5178853_1280.png" alt="CoffeeCup" width="510" height="193" aria-hidden="true">
+            </picture>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">Coffee Boost</h3>
+                        <p class="cs-item-text">Revitalize with Coffee Boost: coffee, banana, cocoa.  Perfect energizing treat any time of day.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">Lemon Pepper Calamari</h3>
+                        <p class="cs-item-text">Lemon Pepper Calamari: Tender calamari with zesty lemon and a hint of peppery spice.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">Matcha Chai</h3>
+                        <p class="cs-item-text">Matcha Chai: A harmonious blend of matcha and chai spices for a revitalizing experience.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">Super Salad</h3>
+                        <p class="cs-item-text">Super Salad: A vibrant medley of fresh greens, nutrient-packed veggies, and wholesome toppings.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">Hot Chocolate</h3>
+                        <p class="cs-item-text">Hot Chocolate: Rich, velvety cocoa indulgence to warm your soul on any chilly day.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">Double Cheeseburger</h3>
+                        <p class="cs-item-text">Double Cheeseburger: Juicy beef patties layered with melted cheese, served on a toasted bun.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <a href="" class="cs-button-solid">Pre-Order Now!</a>
+    </div>
+</section>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Preload images for better performance
+    const images = document.querySelectorAll(".cs-image img");
+    images.forEach(img => {
+      const src = img.getAttribute("src");
+      const newImg = new Image();
+      newImg.src = src;
+    });
+
+    // Smooth scrolling to section when Pre-Order Now button is clicked
+    const preOrderButton = document.querySelector(".cs-button-solid");
+    preOrderButton.addEventListener("click", function(event) {
+      event.preventDefault();
+      const sectionId = this.getAttribute("href").substring(1);
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+</script>
+
+
+<style>
+/*-- -------------------------- -->
+<---          Services          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #services-1191 {
+        padding: var(--sectionPadding);
+        /* prevents padding from affecting height and  */
+        box-sizing: border-box;
+        min-height: 100vh; /* Ensure the section is long enough to require scrolling */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    #services-1191 .cs-container {
+        /* changes to 1440px at desktop */
+        max-width: 58.75rem;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+    #services-1191 .cs-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+    }
+
+    #services-1191 .cs-title {
+        max-width: 20ch;
+    }
+    #services-1191 .cs-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+        position: relative;
+    }
+    #services-1191 .cs-image {
+        width: 100%;
+        max-width: 31.875rem;
+        height: auto;
+        display: block;
+        position: relative;
+    }
+    #services-1191 .cs-image img {
+        width: 100%;
+        height: auto;
+    }
+    #services-1191 .cs-card-group {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        justify-content: center;
+        row-gap: 1rem;
+    }
+    #services-1191 .cs-item {
+        text-align: center;
+        list-style: none;
+        max-width: 23rem;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+    }
+    #services-1191 .cs-picture {
+        width: 5rem;
+        height: 5rem;
+        box-sizing: border-box;
+        /* prevents border from affecting height and width */
+        background-color: #f7f7f7;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        /* prevents flexbox from squishing it */
+        flex: none;
+    }
+    #services-1191 .cs-icon {
+        width: 1.875rem;
+        height: auto;
+        display: block;
+    }
+    #services-1191 .cs-h3 {
+        font-size: 1.25rem;
+        line-height: 1.5em;
+        margin: 0;
+        margin-bottom: 0.5rem;
+        color: var(--headerColor);
+        text-align: inherit;
+    }
+    #services-1191 .cs-item-text {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        line-height: 1.5em;
+        margin: 0;
+        color: var(--bodyTextColor);
+        text-align: inherit;
+    }
+    #services-1191 .cs-button-solid {
+        font-size: 1rem;
+        /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        font-weight: 700;
+        min-width: 9.375rem;
+        margin: 0;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+        padding: 0 1.5rem;
+        color: #fff;
+        background-color: var(--primary);
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+    }
+    #services-1191 .cs-button-solid:before {
+        content: "";
+        width: 0%;
+        height: 100%;
+        background: #000;
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: width 0.3s;
+    }
+    #services-1191 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #services-1191 .cs-card-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    #services-1191 .cs-item {
+        text-align: left;
+        margin: 0;
+        width: 32%;
+        align-items: flex-start;
+    }
+    #services-1191 .cs-image {
+        max-height: 28.125rem;
+    }
+    #services-1191 .cs-image img {
+        width: 100%;
+        height: auto;
+        max-height: 28.125rem;
+        object-fit: contain;
+    }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #services-1191 .cs-container {
+        max-width: 90rem;
+    }
+    #services-1191 .cs-image {
+        width: 30vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #services-1191 .cs-image img {
+        width: auto;
+        height: auto;
+    }
+    #services-1191 .cs-card-group {
+        align-items: flex-start;
+        justify-content: center;
+        /* 180px - 356px */
+        column-gap: clamp(11.25rem, 21vw, 22.25rem);
+        /* 40px - 88px */
+        row-gap: clamp(2.5rem, 8vw, 5.5rem);
+    }
+    #services-1191 .cs-item {
+        width: 32vw;
+        max-width: 26.375rem;
+        flex-direction: row;
+        position: relative;
+    }
+    #services-1191 .cs-item:nth-of-type(odd) {
+        text-align: right;
+    }
+    #services-1191 .cs-item:nth-of-type(odd) .cs-picture {
+        /* sends it to the right in the 2nd position */
+        order: 2;
+    }
+    #services-1191 .cs-item:nth-of-type(3) {
+        /* 90px - 1280px */
+        left: calc(clamp(5.625rem, 8vw, 8rem) * -1);
+    }
+    #services-1191 .cs-item:nth-of-type(4) {
+        /* 90px - 1280px */
+        right: calc(clamp(5.625rem, 8vw, 8rem) * -1);
+    }
+}
+
+                                
+<style/>
